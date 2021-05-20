@@ -2,6 +2,7 @@ import { Component } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Home from '../home/Home';
+import Auth from '../auth/Auth';
 import MoviePage from '../movies/MoviePage';
 import {
   BrowserRouter as Router,
@@ -24,6 +25,12 @@ class App extends Component {
               <Route path="/" exact={true}
                 render={routerProps => (
                   <Home {...routerProps} />
+                )}
+              />
+
+              <Route path="/authentication" exact={true}
+                render={routerProps => (
+                  <Auth {...routerProps} />
                 )}
               />
 
