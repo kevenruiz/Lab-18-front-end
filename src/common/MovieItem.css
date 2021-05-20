@@ -1,0 +1,26 @@
+.MovieItem {
+  list-style: none;
+  background: rgba(255, 0, 0, 0.1);
+  padding: 10px;
+
+  display: grid;
+  grid-template-rows: 30px 120px 20px;
+  grid-gap: 10px;
+
+  justify-items: center;
+}
+
+.MovieItem h2 {
+  margin: 0;
+}
+
+.MovieItem img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.MovieItem p {
+  margin: 0;
+  font-size: .9rem;
+}

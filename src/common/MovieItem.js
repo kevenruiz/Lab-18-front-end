@@ -8,9 +8,11 @@ export default class MovieItem extends Component {
 
     return (
       <li className="MovieItem">
-        <h2>{movies.title}</h2>
+        <div>
+          <h2>{movies.title}</h2>
+          <p>({movies.year})</p>
+        </div> 
         <img src={movies.img} alt={movies.title} />
-        <p>{movies.year}</p>
         <p>{movies.genre}</p>
         <p>{movies.rating}</p>
       </li>
