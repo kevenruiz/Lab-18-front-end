@@ -1,20 +1,20 @@
 import { Component } from 'react';
 import MovieList from '../common/MovieList';
-import { movieData } from '../data/movie-data';
+import { movies } from '../data/movie-data.js';
 import './MoviePage.css';
 
 export default class MoviePage extends Component {
   state = {
-    movies: movieData
+    movies: movies
   }
-  
+
 
   render() {
     const { movies } = this.state;
-    
+    console.log(movies);
     return (
       <div className="MoviePage">
-        <MovieList movies={movies}/>
+        <MovieList movies={movies} />
       </div>
     );
   }
