@@ -53,7 +53,7 @@ export async function signUp(credentials) {
     throw response.body;
   }
 
-  return response.body
+  return response.body;
 }
 
 export async function signIn(credentials) {
@@ -66,5 +66,5 @@ export async function signIn(credentials) {
     throw response.body;
   }
 
-  return response.body
+  return response.body;
 }
