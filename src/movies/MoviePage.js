@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import MovieList from '../common/MovieList';
 import Loader from '../common/Loader';
-import { getFavorites, getMovies, addFavorites, deleteFavorite } from '../utils/api-utils';
+import { getFavorites, getMovies, addFavorites, deleteFavorite, containsMovie } from '../utils/api-utils';
 import './MoviePage.css';
 import MovieSearch from './MovieSearch';
 
@@ -56,11 +56,11 @@ export default class MoviePage extends Component {
   handleFavorited = async movie => {
     try {
       this.setState({ loading: true });
-      const { movies } = this.state;
+      const { movies, favorites } = this.state;
 
-      const favoriteId = movie.id;
+      const favoriteId = movie.movieId;
 
-      if (favoriteId) {
+      if (containsMovie(movie, favorites)) { // if movie is in array then delete else add
         await deleteFavorite(favoriteId);
 
         const updateMovies = movies.map(movie => {

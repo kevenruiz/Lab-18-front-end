@@ -2,23 +2,24 @@ import { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import './MovieItem.css';
 
-// const RED_HEART = '❤️';
-// const WHITE_HEART = '♡';
+const RED_HEART = '❤️';
+const WHITE_HEART = '♡';
 
 export default class MovieItem extends Component {
-  // state = {
-  //   isFavorite: Boolean(this.props.movie.id)
-  // }
+  state = {
+    isFavorite: false
+  }
 
-  // handleFavoriteClick = e => {
-  //   const { onFavorited, movie } = this.props;
-  //   e.preventDefault();
-  //   onFavorited(movie);
-  //   this.setState({ isFavorite: !this.state.isFavorite });
-  // }
+  handleFavoriteClick = e => {
+    const { onFavorited, movies } = this.props;
+    e.preventDefault();
+    console.log(`inside of movie item: ${movies}`);
+    onFavorited(movies);
+    this.setState({ isFavorite: !this.state.isFavorite });
+  }
 
   render() {
-    // const { isFavorite } = this.state;
+    const { isFavorite } = this.state;
     const { movies } = this.props;
 
     return (
@@ -30,9 +31,9 @@ export default class MovieItem extends Component {
         <img src={movies.img} alt={movies.title} />
         {/* <p>{movies.genre}</p> */}
         <p>{movies.rating}</p>
-        {/* <button className="favorite" onClick={this.handleFavoriteClick}>
+        <button className="favorite" onClick={this.handleFavoriteClick}>
           {isFavorite ? RED_HEART : WHITE_HEART}
-        </button> */}
+        </button>
       </li>
     );
   }

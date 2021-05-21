@@ -68,3 +68,13 @@ export async function signIn(credentials) {
 
   return response.body;
 }
+
+export function containsMovie(obj, movies) {
+  for (let movie of movies) {
+    if (movie.movieId === obj.movieId) {
+      return true;
+    }
+  }
+  return false;
+}
+
