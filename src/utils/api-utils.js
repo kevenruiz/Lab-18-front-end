@@ -4,8 +4,9 @@ export async function getMovies(search) {
 
   const response = await request
     .get('/api/movies')
-    .query({ search: search })
-    .set('Authorization', window.localStorage.getItem('TOKEN'));
+    .set('Authorization', window.localStorage.getItem('TOKEN'))
+    .query({ search: search });
+    
 
   return response.body;
 }
