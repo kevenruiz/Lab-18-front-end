@@ -4,7 +4,7 @@ import Footer from './Footer';
 import Home from '../home/Home';
 import Auth from '../auth/Auth';
 import MoviePage from '../movies/MoviePage';
-import FavoritesPage from './favorites/FavoritesPage';
+import FavoritesPage from '../favorites/FavoritesPage';
 import {
   BrowserRouter as Router,
   Route,

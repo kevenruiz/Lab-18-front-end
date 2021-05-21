@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import MovieList from '../common/MovieList';
 import Loader from '../common/Loader';
-import { getFavorites, deleteFavorite, addFavorites } from '../utils/api-utils'
+import { getFavorites, deleteFavorite, addFavorites } from '../utils/api-utils';
 import './FavoritesPage.css';
 
 export default class FavoritesPage extends Component {
@@ -16,19 +16,19 @@ export default class FavoritesPage extends Component {
       this.setState({ loading: true });
 
       const favorites = await getFavorites();
-      this.setState({ favorites: favorites })
+      this.setState({ favorites: favorites });
     }
     catch (err) {
       console.log(err.message);
     }
     finally {
-      this.setState({ loading: false })
+      this.setState({ loading: false });
     }
   }
 
   handleFavorited = async favorite => {
     try {
-      this.setState({ loading: true })
+      this.setState({ loading: true });
 
       if (favorite.deleted) {
         const { favorites } = this.state;

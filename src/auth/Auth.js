@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { signIn, signUp } from '../utils/api-utils';
 import './Auth.css';
 
 export default class Auth extends Component {
@@ -11,8 +12,30 @@ export default class Auth extends Component {
   }
 
   handleSwitch = () => {
-    this.setState({ signUp: !this.setState.isSignUp });
+    this.setState({ signUp: !this.state.isSignUp });
   }
+
+  handleSubmit = async e => {
+    e.preventDefault();
+
+    const { isSignUp } = this.state;
+    const { onUser, history } = this.props;
+
+    this.setState({ error: '' });
+
+    try {
+      const action = isSignUp ? signUp : signIn;
+      const user = await action(this.state);
+
+      onUser(user);
+
+      history.push('/');
+    }
+    catch (err) {
+      this.setState({ error: err.error });
+    }
+  }
+
 
   handleNameChange = ({ target }) => {
     this.setState({ name: target.value });

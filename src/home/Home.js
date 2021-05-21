@@ -9,9 +9,10 @@ export default class Home extends Component {
       <div className="Home">
         <h2>Home Page</h2>
 
-        <Link to='/movies'>See the List</Link>
+        <p><Link to='/movies'>See the List</Link></p>
 
-        <Link to='/authentication'>Log in or Sign up!</Link>
+
+        <Link to='/auth'>Log in or Sign up!</Link>
       </div>
     );
   }
