@@ -1,9 +1,9 @@
 import { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './MovieItem.css';
 
-const RED_HEART = '❤️';
-const WHITE_HEART = '♡';
+// const RED_HEART = '❤️';
+// const WHITE_HEART = '♡';
 
 export default class MovieItem extends Component {
   // state = {
