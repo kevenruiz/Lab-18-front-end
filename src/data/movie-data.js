@@ -1,4 +1,4 @@
-export const movieData = [
+export const movies = [
   {
     title: 'movie 1',
     year: '1996',
@@ -20,4 +20,4 @@ export const movieData = [
     rating: 'PG',
     img: 'url'
   }
-]
+];
