@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import MovieList from '../common/MovieList';
 import Loader from '../common/Loader';
+import { Link } from 'react-router-dom';
 import { getFavorites, getMovies, addFavorites, deleteFavorite, containsMovie } from '../utils/api-utils';
 import './MoviePage.css';
 import MovieSearch from './MovieSearch';
@@ -100,6 +101,7 @@ export default class MoviePage extends Component {
 
     return (
       <div className="MoviePage">
+        <Link to='/favorites'>See your favorites!</Link>
         <Loader loading={loading} />
         <MovieSearch onSearch={this.handleSearch} />
         <MovieList movies={movies} onFavorited={this.handleFavorited} />

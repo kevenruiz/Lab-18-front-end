@@ -35,6 +35,7 @@ export default class FavoritesPage extends Component {
 
         const newFavorite = await addFavorites(favorite);
 
+
         const updateFavorites = favorites.map(fav => {
           return fav.id === favorite.id ? newFavorite : fav;
         });
